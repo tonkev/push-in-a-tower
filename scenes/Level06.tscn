@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Shooter.tscn" type="PackedScene" id=5]
+
+[node name="Level06" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -393215, 4, 0, -393214, 4, 0, -393213, 4, 0, -393212, 4, 0, -393211, 4, 0, -262147, 4, 0, -262146, 4, 0, -262145, 4, 0, -327680, 4, 0, -327679, 4, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 4, 0, -196611, 4, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 4, 0, -131075, 4, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 4, 0, -65539, 4, 0, -65538, 1, 0, -65537, 1, 0, -131072, 4, 0, -131071, 4, 0, -131070, 1, 0, -131069, 1, 0, -131068, 1, 0, -131067, 4, 0, -5, 4, 0, -4, 4, 0, -3, 4, 0, -2, 1, 0, -1, 1, 0, -65535, 2, 0, -65534, 1, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, 65531, 4, 0, 65532, 2, 0, 65533, 2, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 2, 0, 4, 2, 0, 5, 4, 0, 131067, 4, 0, 131068, 5, 0, 131069, 6, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65541, 4, 0, 196603, 4, 0, 196604, 7, 0, 196605, 8, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131077, 4, 0, 262139, 4, 0, 262140, 4, 0, 262141, 4, 0, 262142, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 327675, 2, 0, 327676, 2, 0, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 32 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Brick" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -40, 24 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -56, 24 )
+
+[node name="Shooter" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 8, -8 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -96.0
+margin_top = 96.0
+margin_right = 112.0
+margin_bottom = 136.0
+text = "Watch out for security, I forgot about that."

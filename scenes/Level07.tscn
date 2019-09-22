@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Shooter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=6]
+
+[node name="Level07" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -524289, 4, 0, -589824, 4, 0, -589823, 4, 0, -458756, 4, 0, -458755, 4, 0, -458754, 4, 0, -458753, 4, 0, -524287, 4, 0, -524286, 4, 0, -524285, 4, 0, -393220, 4, 0, -393219, 2, 0, -393218, 2, 0, -393217, 2, 0, -458752, 1, 0, -458751, 2, 0, -458750, 2, 0, -458749, 4, 0, -327684, 4, 0, -327681, 1, 0, -393216, 1, 0, -393215, 1, 0, -393214, 1, 0, -393213, 4, 0, -262148, 4, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 4, 0, -196612, 4, 0, -196611, 4, 0, -196610, 4, 0, -196609, 4, 0, -262144, 1, 0, -262143, 1, 0, -262142, 4, 0, -262141, 4, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 4, 0, -196608, 1, 0, -196607, 1, 0, -196606, 4, 0, -196605, 2, 0, -65537, 4, 0, -131072, 1, 0, -131071, 1, 0, -131070, 4, 0, -1, 4, 0, -65536, 1, 0, -65535, 1, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, 65531, 4, 0, 65532, 4, 0, 65533, 4, 0, 65534, 4, 0, 65535, 4, 0, 0, 1, 0, 1, 1, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 4, 0, 131067, 4, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 5, 0, 65540, 6, 0, 65541, 4, 0, 196603, 4, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 7, 0, 131076, 8, 0, 131077, 4, 0, 262139, 4, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 327675, 4, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 4, 0, 262148, 2, 0, 262149, 2, 0, 393211, 4, 0, 393212, 4, 0, 393213, 4, 0, 393214, 4, 0, 393215, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 458747, 2, 0, 458748, 2, 0, 458749, 2, 0, 458750, 2, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( -32, -80 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Brick" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 56, 24 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 72, 24 )
+
+[node name="Shooter" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 8, -120 )
+
+[node name="Box" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -40, 56 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )

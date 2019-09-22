@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+
+[node name="Level01" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -327685, 4, 0, -327684, 4, 0, -327683, 4, 0, -327682, 4, 0, -327681, 4, 0, -393216, 4, 0, -393215, 4, 0, -393214, 4, 0, -393213, 4, 0, -393212, 4, 0, -393211, 4, 0, -262149, 4, 0, -262148, 2, 0, -262147, 2, 0, -262146, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 4, 0, -196613, 4, 0, -196612, 1, 0, -196611, 1, 0, -196610, 1, 0, -196609, 1, 0, -262144, 1, 0, -262143, 1, 0, -262142, 1, 0, -262139, 4, 0, -131077, 4, 0, -131076, 1, 0, -131075, 1, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196603, 4, 0, -65541, 4, 0, -65540, 4, 0, -65539, 4, 0, -65538, 4, 0, -65537, 4, 0, -131072, 4, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -131068, 4, 0, -131067, 4, 0, -5, 2, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, -48 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Brick" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 8, -40 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -48, -40 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -80.0
+margin_top = 16.0
+margin_right = 96.0
+margin_bottom = 64.0
+text = "Take these Bricks to the top of the Tower, I need them."
